@@ -1,8 +1,3 @@
-
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,126 +34,111 @@
 
 <!-------Banner Start------->
 <section class="banner" data-scroll-index='0'>
-    <div class="banner-overlay">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-sm-12">
-            <div class="banner-text">
-              <h2 class="animated-title">Welcome to <span class="highlight">Scratch & Win</span></h2>
-              <h6 class="white">Your Ticket to Instant Cash and Big Wins!!</h6>
-              <p class="banner-text white">Buy a scratch card for just ₹10 and WIN up to ₹500 – Your chance to win over ₹1 Lakh daily is just one scratch away! Instant withdrawal via UPI, Paytm, and more – start scratching and winning today!</p>
-              <ul>
-                <li>
-                  <a href="https://scratchwin.site/ScratchWin.apk" download="Scratch & Win">
-                    <img src="https://html-generator.com/uploads/images/2024/10/17/72599RB660XX5JB.png" class="wow fadeInUp" data-wow-delay="0.2s"/>
-                  </a>
-                </li>
-              </ul>
-            </div>
+  <div class="banner-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-12">
+          <div class="banner-text">
+            <h2 class="animated-title">Welcome to <span class="highlight">Scratch & Win</span></h2>
+            <h6 class="white">Your Ticket to Instant Cash and Big Wins!!</h6>
+            <p class="banner-text white">Buy a scratch card for just ₹10 and WIN up to ₹500 – Your chance to win over ₹1 Lakh daily is just one scratch away! Instant withdrawal via UPI, Paytm, and more – start scratching and winning today!</p>
+            <ul>
+              <li>
+                <a href="https://scratch.site/ScratchWin.apk" download="Scratch & Win">
+                  <img src="https://html-generator.com/uploads/images/2024/10/20/74918FS103493EB.png" class="wow fadeInUp" data-wow-delay="0.2s"/>
+                </a>
+              </li>
+            </ul>
           </div>
-          <div class="col-md-4 col-sm-12"> 
-            <img src="https://scratchwin.site/ss1.jpg" class="img-fluid wow fadeInUp"/> 
-          </div>
+        </div>
+        <div class="col-md-4 col-sm-12"> 
+          <img src="https://html-generator.com/uploads/images/2024/10/20/79737Z6R7ZXU0GJ.png" class="img-fluid wow fadeInUp"/> 
         </div>
       </div>
     </div>
-    <span class="svg-wave"> <img class="svg-hero" src="https://scratchwin.site/applight-wave.png"> </span> 
-  </section>
-  
-  <style>
-  .banner {
-    position: relative;
-    background: linear-gradient(to right, #4caf50, #388e3c); /* Money green gradient */
-    padding: 100px 0;
-    overflow: hidden;
+  </div>
+</section>
+
+<style>
+.banner {
+  position: relative;
+  background-color: #1a1a1a; /* Default dark background */
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.banner-overlay {
+  position: relative;
+  z-index: 2;
+}
+
+.animated-title {
+  font-size: 2.5em;
+  animation: slideIn 1s ease forwards;
+}
+
+.highlight {
+  color: #ffcc00;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
   }
-  
-  .banner-overlay {
-    position: relative;
-    z-index: 2;
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
-  
-  .animated-title {
-    font-size: 2.5em;
-    animation: slideIn 1s ease forwards;
-    color: #ffd600; /* Gold color */
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
   }
-  
-  .highlight {
-    color: #ffcc00; /* Bright gold highlight */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-    animation: pulse 1.5s infinite;
+  50% {
+    transform: scale(1.1);
   }
-  
-  @keyframes slideIn {
-    from {
-      transform: translateY(-50px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
+}
+
+.white {
+  color: #ffffff;
+}
+
+.banner-text p {
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+.banner-text ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.banner-text ul li {
+  margin-top: 20px;
+}
+
+.banner-text ul li a {
+  display: inline-block;
+}
+
+.img-fluid {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  @keyframes pulse {
-    0%, 100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
+  to {
+    opacity: 1;
   }
-  
-  .white {
-    color: #ffffff;
-  }
-  
-  .banner-text p {
-    margin-top: 20px;
-    font-size: 1.2em;
-  }
-  
-  .banner-text ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .banner-text ul li {
-    margin-top: 20px;
-  }
-  
-  .banner-text ul li a {
-    display: inline-block;
-  }
-  
-  .img-fluid {
-    animation: fadeIn 1s ease forwards;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  .svg-wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    z-index: 1;
-  }
-  
-  .svg-hero {
-    width: 100%;
-  }
-  </style>
-  
+}
+</style>
+
 
 <!-------Banner End------->  
 
@@ -444,7 +424,7 @@
         <div class="section-content text-center">
           <ul>
             <!--<li><a href="#"><img src="images/appstore.png" class="wow fadeInUp" data-wow-delay="0.2s"/></a></li>-->
-            <li><a href="https://scratchwin.site/ScratchWin.apk" download="Scratch & Win"><img src="https://html-generator.com/uploads/images/2024/10/17/72599RB660XX5JB.png" class="wow fadeInUp" data-wow-delay="0.2s"/></a></li>
+            <li><a href="https://scratchwin.site/ScratchWin.apk" download="Scratch & Win"><img src="https://html-generator.com/uploads/images/2024/10/20/74918FS103493EB.png" class="wow fadeInUp" data-wow-delay="0.2s"/></a></li>
           </ul>
         </div>
       </div>
@@ -472,68 +452,69 @@
 <script src="https://10xxbet.fun/scrollIt.min.js"></script> 
 <script src="https://10xxbet.fun/wow.min.js"></script> 
 <script>
-	wow = new WOW();
-	wow.init();
+  wow = new WOW();
+  wow.init();
 $(document).ready(function(e) {
 
-	$('#video-icon').on('click',function(e){
-	e.preventDefault();
-	$('.video-popup').css('display','flex');
-	$('.iframe-src').slideDown();
-	});
-	$('.video-popup').on('click',function(e){
-	var $target = e.target.nodeName;
-	var video_src = $(this).find('iframe').attr('src');
-	if($target != 'IFRAME'){
-	$('.video-popup').fadeOut();
-	$('.iframe-src').slideUp();
-	$('.video-popup iframe').attr('src'," ");
-	$('.video-popup iframe').attr('src',video_src);
-	}
-	});
+  $('#video-icon').on('click',function(e){
+  e.preventDefault();
+  $('.video-popup').css('display','flex');
+  $('.iframe-src').slideDown();
+  });
+  $('.video-popup').on('click',function(e){
+  var $target = e.target.nodeName;
+  var video_src = $(this).find('iframe').attr('src');
+  if($target != 'IFRAME'){
+  $('.video-popup').fadeOut();
+  $('.iframe-src').slideUp();
+  $('.video-popup iframe').attr('src'," ");
+  $('.video-popup iframe').attr('src',video_src);
+  }
+  });
 
-	$('.slider').bxSlider({
-	pager: false
-	});
+  $('.slider').bxSlider({
+  pager: false
+  });
 });
     
 $(window).on("scroll",function () {
 
-	var bodyScroll = $(window).scrollTop(),
-	navbar = $(".navbar");
-	
-	if(bodyScroll > 50){
-	$('.navbar-logo img').attr('src','https://scratchwin.site/logo.jpg');
-	navbar.addClass("nav-scroll");
+  var bodyScroll = $(window).scrollTop(),
+  navbar = $(".navbar");
+  
+  if(bodyScroll > 50){
+  $('.navbar-logo img').attr('src','https://scratchwin.site/logo.jpg');
+  navbar.addClass("nav-scroll");
 
 }else{
-	$('.navbar-logo img').attr('src','https://scratchwin.site/logo.jpg');
-	navbar.removeClass("nav-scroll");
+  $('.navbar-logo img').attr('src','https://scratchwin.site/logo.jpg');
+  navbar.removeClass("nav-scroll");
 }
 
 });
 $(window).on("load",function (){
-	var bodyScroll = $(window).scrollTop(),
-	navbar = $(".navbar");
-	
-	if(bodyScroll > 50){
-	$('.navbar-logo img').attr('src','https://scratchwin.site/logo.jpg');
-	navbar.addClass("nav-scroll");
-	}else{
-	$('.navbar-logo img').attr('src','https://scratchwin.site/logo.jpg');
-	navbar.removeClass("nav-scroll");
-	}
+  var bodyScroll = $(window).scrollTop(),
+  navbar = $(".navbar");
+  
+  if(bodyScroll > 50){
+  $('.navbar-logo img').attr('src','https://scratchwin.site/logo.jpg');
+  navbar.addClass("nav-scroll");
+  }else{
+  $('.navbar-logo img').attr('src','https://scratchwin.site/logo.jpg');
+  navbar.removeClass("nav-scroll");
+  }
 
-	$.scrollIt({
-	
-	easing: 'swing',      // the easing function for animation
-	scrollTime: 900,       // how long (in ms) the animation takes
-	activeClass: 'active', // class given to the active nav element
-	onPageChange: null,    // function(pageIndex) that is called when page is changed
-	topOffset: -63
-	});
+  $.scrollIt({
+  
+  easing: 'swing',      // the easing function for animation
+  scrollTime: 900,       // how long (in ms) the animation takes
+  activeClass: 'active', // class given to the active nav element
+  onPageChange: null,    // function(pageIndex) that is called when page is changed
+  topOffset: -63
+  });
 });
 
 </script>
 </body>
 </html>
+
