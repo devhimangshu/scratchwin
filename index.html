@@ -94,6 +94,15 @@
       align-items: center;
       max-width: 420px;
       margin: 0 auto;
+      animation: slideDownFade 0.8s ease forwards;
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    @keyframes slideDownFade {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     header nav {
       display: none;
@@ -112,6 +121,17 @@
       border-radius: 0 0 12px 12px;
       overflow: hidden;
       z-index: 50;
+      animation: fadeInScale 0.3s ease forwards;
+    }
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scaleY(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scaleY(1);
+      }
     }
     header nav.mobile-menu.hidden {
       display: none !important;
@@ -135,6 +155,15 @@
       align-items: center;
       gap: 0.5rem;
       user-select: none;
+      animation: fadeInLeft 1s ease forwards;
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    @keyframes fadeInLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
     header .logo img {
       height: 36px;
@@ -157,6 +186,15 @@
       cursor: pointer;
       user-select: none;
       transition: color 0.3s ease;
+      animation: fadeInRight 1s ease forwards;
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    @keyframes fadeInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
     header button.menu-toggle:hover,
     header button.menu-toggle:focus {
@@ -176,6 +214,15 @@
       align-items: center;
       gap: 1.25rem;
       text-align: center;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     .hero h1 {
       font-size: 2.25rem;
@@ -185,12 +232,30 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       filter: drop-shadow(0 0 6px #ffd700cc);
+      animation: textGlow 3s ease-in-out infinite alternate;
+    }
+    @keyframes textGlow {
+      0% {
+        filter: drop-shadow(0 0 6px #ffd700cc);
+      }
+      100% {
+        filter: drop-shadow(0 0 12px #ffec8bcc);
+      }
     }
     .hero h2 {
       font-size: 1.125rem;
       font-weight: 600;
       color: #fbbf24;
       text-shadow: 0 0 4px #fbbf24aa;
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+      animation-delay: 0.5s;
+      animation-fill-mode: forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
     }
     .hero p {
       font-size: 0.875rem;
@@ -198,6 +263,10 @@
       max-width: 320px;
       line-height: 1.4;
       user-select: text;
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
     }
     .hero .btn-group {
       display: flex;
@@ -205,6 +274,10 @@
       margin-top: 1.5rem;
       justify-content: center;
       flex-wrap: wrap;
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+      animation-delay: 1.5s;
+      animation-fill-mode: forwards;
     }
     .hero img {
       width: 280px;
@@ -212,6 +285,17 @@
       border-radius: 16px;
       box-shadow: 0 0 20px #ffd700cc;
       user-select: none;
+      animation: floatBounce 4s ease-in-out infinite;
+    }
+    @keyframes floatBounce {
+      0%, 100% {
+        transform: translateY(0);
+        filter: drop-shadow(0 0 20px #ffd700cc);
+      }
+      50% {
+        transform: translateY(-10px);
+        filter: drop-shadow(0 0 30px #ffec8bcc);
+      }
     }
     /* Video Section */
     .video-wrapper {
@@ -227,12 +311,22 @@
       margin-left: auto;
       margin-right: auto;
       text-align: center;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+      animation-delay: 2s;
+      animation-fill-mode: forwards;
     }
     .video-wrapper img {
       display: block;
       width: 100%;
       height: auto;
       border-radius: 16px;
+      transition: transform 0.3s ease;
+    }
+    .video-wrapper:hover img,
+    .video-wrapper:focus-within img {
+      transform: scale(1.05);
     }
     .video-overlay-button {
       position: absolute;
@@ -260,31 +354,36 @@
       white-space: nowrap;
       min-width: 140px;
       z-index: 10;
+      filter: drop-shadow(0 0 10px #ffd700cc);
     }
     .video-overlay-button:hover,
     .video-overlay-button:focus {
       box-shadow: 0 0 20px #ffec8b, 0 0 30px #ffd700;
       outline: none;
-      transform: translate(-50%, -50%) scale(1.05);
+      transform: translate(-50%, -50%) scale(1.1);
     }
     /* Floating video modal */
     .video-modal {
       position: fixed;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%) scale(0.8);
       background: #1a1a2e;
       border-radius: 16px;
       box-shadow: 0 0 30px #ffd700cc;
       z-index: 1000;
-      max-width: 90vw;
-      max-height: 80vh;
+      max-width: 100vw;
+      max-height: 100vh;
       display: none;
       flex-direction: column;
       overflow: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
     .video-modal.active {
       display: flex;
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
     }
     .video-modal iframe {
       width: 100%;
@@ -312,6 +411,11 @@
     /* Features */
     .features {
       margin-top: 2.5rem;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+      animation-delay: 2.5s;
+      animation-fill-mode: forwards;
     }
     .features h2 {
       font-size: 1.75rem;
@@ -320,6 +424,7 @@
       text-align: center;
       margin-bottom: 1.5rem;
       text-shadow: 0 0 8px #ffd700cc;
+      animation: textGlow 3s ease-in-out infinite alternate;
     }
     .features-list {
       display: grid;
@@ -336,10 +441,15 @@
       gap: 1rem;
       align-items: flex-start;
       user-select: none;
-      transition: box-shadow 0.3s ease;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: default;
+      opacity: 0;
+      transform: translateY(20px);
+      animation-fill-mode: forwards;
     }
     .feature-item:hover {
       box-shadow: 0 0 20px #ffd700dd;
+      transform: translateY(0) scale(1.03);
     }
     .feature-icon {
       font-size: 1.75rem;
@@ -347,6 +457,15 @@
       flex-shrink: 0;
       margin-top: 0.15rem;
       filter: drop-shadow(0 0 4px #ffd700cc);
+      animation: iconPulse 3s ease-in-out infinite;
+    }
+    @keyframes iconPulse {
+      0%, 100% {
+        filter: drop-shadow(0 0 4px #ffd700cc);
+      }
+      50% {
+        filter: drop-shadow(0 0 12px #ffec8bcc);
+      }
     }
     .feature-content h3 {
       font-weight: 700;
@@ -360,17 +479,48 @@
       color: #e0c97a;
       line-height: 1.4;
     }
+    /* Animate each feature item with stagger */
+    .feature-item:nth-child(1) {
+      animation: fadeInUp 0.6s ease forwards;
+      animation-delay: 2.6s;
+    }
+    .feature-item:nth-child(2) {
+      animation: fadeInUp 0.6s ease forwards;
+      animation-delay: 2.8s;
+    }
+    .feature-item:nth-child(3) {
+      animation: fadeInUp 0.6s ease forwards;
+      animation-delay: 3s;
+    }
+    .feature-item:nth-child(4) {
+      animation: fadeInUp 0.6s ease forwards;
+      animation-delay: 3.2s;
+    }
+    .feature-item:nth-child(5) {
+      animation: fadeInUp 0.6s ease forwards;
+      animation-delay: 3.4s;
+    }
+    .feature-item:nth-child(6) {
+      animation: fadeInUp 0.6s ease forwards;
+      animation-delay: 3.6s;
+    }
     /* Screenshot */
     .screenshot {
       margin-top: 2.5rem;
       display: flex;
       justify-content: center;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+      animation-delay: 3.8s;
+      animation-fill-mode: forwards;
     }
     .screenshot img {
       width: 280px;
       border-radius: 16px;
       box-shadow: 0 0 20px #ffd700cc;
       user-select: none;
+      animation: floatBounce 4s ease-in-out infinite;
     }
     /* Reviews */
     .reviews {
@@ -379,6 +529,11 @@
       overflow: hidden;
       position: relative;
       user-select: none;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+      animation-delay: 4.2s;
+      animation-fill-mode: forwards;
     }
     .reviews h2 {
       font-size: 1.75rem;
@@ -387,11 +542,12 @@
       text-align: center;
       margin-bottom: 1rem;
       text-shadow: 0 0 8px #ffd700cc;
+      animation: textGlow 3s ease-in-out infinite alternate;
     }
     .reviews-scroll {
       display: flex;
       gap: 1rem;
-      animation: scrollReviews 30s linear infinite;
+      animation: scrollReviews 10s linear infinite;
       will-change: transform;
     }
     @keyframes scrollReviews {
@@ -415,10 +571,25 @@
       align-items: center;
       text-align: center;
       color: #e0c97a;
-      transition: box-shadow 0.3s ease;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: default;
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
     }
     .review-card:hover {
       box-shadow: 0 0 20px #ffd700dd;
+      transform: translateY(0) scale(1.03);
+    }
+    /* Stagger review cards fade in */
+    .review-card:nth-child(1) {
+      animation-delay: 4.3s;
+    }
+    .review-card:nth-child(2) {
+      animation-delay: 4.5s;
+    }
+    .review-card:nth-child(3) {
+      animation-delay: 4.7s;
     }
     .review-avatar {
       width: 64px;
@@ -457,6 +628,11 @@
       margin-left: auto;
       margin-right: auto;
       user-select: none;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+      animation-delay: 4.8s;
+      animation-fill-mode: forwards;
     }
     .faq h2 {
       font-size: 1.75rem;
@@ -465,6 +641,7 @@
       text-align: center;
       margin-bottom: 1rem;
       text-shadow: 0 0 8px #ffd700cc;
+      animation: textGlow 3s ease-in-out infinite alternate;
     }
     .faq dl {
       background: #1a1a2e;
@@ -487,13 +664,12 @@
       border-bottom: 1px solid #b8860b55;
       transition: background-color 0.3s ease;
       border-radius: 8px;
+      outline-offset: 2px;
     }
     .faq dt:hover,
     .faq dt:focus {
       background-color: #b8860b22;
       outline: none;
-    }
-    .faq dt:focus {
       box-shadow: 0 0 8px #ffd700cc;
     }
     .faq dt .icon {
@@ -511,6 +687,7 @@
       line-height: 1.4;
       color: #f0e9e1cc;
       display: none;
+      animation: fadeIn 0.3s ease forwards;
     }
     .faq dd.show {
       display: block;
@@ -525,39 +702,49 @@
       border-radius: 16px;
       border: 1px solid #b8860b;
       box-shadow: 0 0 12px #b8860baa;
-      padding: 1.5rem 1.75rem;
+      padding: 1rem 1.25rem;
       color: #e0c97a;
-      font-size: 0.875rem;
+      font-size: 0.75rem;
       user-select: text;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+      animation-delay: 5.2s;
+      animation-fill-mode: forwards;
+      line-height: 1.3;
     }
     .contact h2 {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: 800;
       color: #ffd700;
       text-align: center;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       text-shadow: 0 0 8px #ffd700cc;
+      animation: textGlow 3s ease-in-out infinite alternate;
     }
     .contact p {
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       text-align: center;
       color: #fbbf24;
+      font-size: 0.75rem;
+      line-height: 1.3;
     }
     .contact .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.75rem 1rem;
+      gap: 0.5rem 0.75rem;
       font-weight: 600;
       color: #f0e9e1cc;
+      font-size: 0.75rem;
     }
     .contact .info-item {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
     .contact .info-item i {
       color: #ffd700;
-      font-size: 1.125rem;
+      font-size: 1rem;
       filter: drop-shadow(0 0 4px #ffd700cc);
       flex-shrink: 0;
     }
@@ -589,15 +776,27 @@
       min-width: 140px;
       max-width: 90vw;
       box-sizing: border-box;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+      animation: floatPulse 3s ease-in-out infinite;
     }
     .floating-download:hover,
     .floating-download:focus {
       box-shadow: 0 0 30px #ffec8b, 0 0 40px #ffd700;
       outline: none;
-      transform: translateX(-50%) scale(1.05);
+      transform: translateX(-50%) scale(1.1);
     }
     .floating-download i {
       font-size: 1.125rem;
+    }
+    @keyframes floatPulse {
+      0%, 100% {
+        transform: translateX(-50%) translateY(0);
+        box-shadow: 0 0 20px #ffd700cc;
+      }
+      50% {
+        transform: translateX(-50%) translateY(-6px);
+        box-shadow: 0 0 30px #ffec8bcc;
+      }
     }
     /* Responsive */
     @media (min-width: 768px) {
@@ -666,6 +865,21 @@
       }
       .contact {
         max-width: 720px;
+        font-size: 0.875rem;
+        padding: 1.25rem 2rem;
+      }
+      .contact h2 {
+        font-size: 1.5rem;
+      }
+      .contact p {
+        font-size: 0.875rem;
+      }
+      .contact .info-grid {
+        font-size: 0.875rem;
+        gap: 0.75rem 1rem;
+      }
+      .contact .info-item i {
+        font-size: 1.25rem;
       }
     }
   </style>
@@ -708,7 +922,7 @@
     </section>
 
     <!-- Video Section (Moved out from Hero) -->
-    <section aria-label="Scratch & Win promotional video" class="video-wrapper" id="video-wrapper">
+    <section aria-label="Scratch & Win promotional video" class="video-wrapper" id="video-wrapper" tabindex="0">
       <img src="https://img.youtube.com/vi/z_1Oqh_MiXE/maxresdefault.jpg" alt="Thumbnail of Scratch & Win promotional video showing app interface and winning moments" />
       <button class="video-overlay-button" id="play-video-button" aria-label="Watch Now">Watch Now</button>
     </section>
@@ -872,12 +1086,12 @@
     <!-- Contact Section -->
     <section class="contact" id="contact" aria-label="Contact information">
       <h2>Contact Us</h2>
-      <p>If you have any questions & queries, we are always ready to help our customers.</p>
+      <p>Questions? We're here to help you anytime.</p>
       <div class="info-grid">
         <div class="info-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Bengaluru, India</span></div>
         <div class="info-item"><i class="fas fa-phone-alt" aria-hidden="true"></i><span>1800 8007 8007</span></div>
         <div class="info-item"><i class="fas fa-envelope" aria-hidden="true"></i><span>team@scratchwin.site</span></div>
-        <div class="info-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Daily 09.00 AM - 10.00 PM</span></div>
+        <div class="info-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Daily 09:00 AM - 10:00 PM</span></div>
       </div>
     </section>
   </main>
@@ -1009,6 +1223,15 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && videoModal.classList.contains('active')) {
         closeButton.click();
+      }
+    });
+
+    // Accessibility: allow keyboard to open video modal by Enter or Space on video-wrapper
+    const videoWrapper = document.getElementById('video-wrapper');
+    videoWrapper.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        playButton.click();
       }
     });
   </script>
